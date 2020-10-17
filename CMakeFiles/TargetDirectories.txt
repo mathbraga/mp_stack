@@ -1,0 +1,3 @@
+/mnt/d/UnB/2020_1/MP/Trabalho_1/CMakeFiles/rebuild_cache.dir
+/mnt/d/UnB/2020_1/MP/Trabalho_1/CMakeFiles/runTests.dir
+/mnt/d/UnB/2020_1/MP/Trabalho_1/CMakeFiles/edit_cache.dir

@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/d/UnB/2020_1/MP/Trabalho_1/pilha.c
+math.h
+-
+
+/mnt/d/UnB/2020_1/MP/Trabalho_1/testa_pilha.c
+pilha.c
+/mnt/d/UnB/2020_1/MP/Trabalho_1/pilha.c
+gtest/gtest.h
+-
+

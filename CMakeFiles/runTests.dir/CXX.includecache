@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/d/UnB/2020_1/MP/Trabalho_1/TipoPilha.hpp
+
+/mnt/d/UnB/2020_1/MP/Trabalho_1/pilha.cpp
+stdio.h
+-
+stdlib.h
+-
+TipoPilha.hpp
+/mnt/d/UnB/2020_1/MP/Trabalho_1/TipoPilha.hpp
+pilha.hpp
+/mnt/d/UnB/2020_1/MP/Trabalho_1/pilha.hpp
+
+/mnt/d/UnB/2020_1/MP/Trabalho_1/pilha.hpp
+stdio.h
+-
+stdlib.h
+-
+TipoPilha.hpp
+/mnt/d/UnB/2020_1/MP/Trabalho_1/TipoPilha.hpp
+
+/mnt/d/UnB/2020_1/MP/Trabalho_1/testa_pilha.cpp
+pilha.cpp
+/mnt/d/UnB/2020_1/MP/Trabalho_1/pilha.cpp
+gtest/gtest.h
+-
+
