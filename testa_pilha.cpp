@@ -1,10 +1,15 @@
-#include "pilha.cpp"
+#include "pilha.hpp"
 #include <gtest/gtest.h>
 
 Pilha *stack;
 
-TEST(StackTest, ValidStack) { 
+TEST(NewStack, Stack) { 
     ASSERT_TRUE((stack = CreateStack()) != NULL);
+}
+
+TEST(RemoveStack, Stack){
+    DestroyStack(&stack);
+    ASSERT_TRUE(stack == NULL);
 }
  
 int main(int argc, char **argv) {

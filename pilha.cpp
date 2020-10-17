@@ -13,3 +13,10 @@ Pilha *CreateStack(){
 
     return p;
 }
+
+void DestroyStack(Pilha **p){
+    free(*p);
+    *p = NULL;
+
+    return;
+}

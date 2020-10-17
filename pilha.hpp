@@ -8,3 +8,4 @@ typedef struct {
 } Pilha;
 
 Pilha *CreateStack();
+void DestroyStack(Pilha**);
