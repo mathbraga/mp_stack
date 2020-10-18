@@ -1,1 +1,0 @@
-/usr/bin/c++    -rdynamic CMakeFiles/runTests.dir/testa_pilha.cpp.o CMakeFiles/runTests.dir/pilha.cpp.o  -o runTests lib/libgtest_main.a lib/libgtest.a -lpthread 
