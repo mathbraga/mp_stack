@@ -2,10 +2,17 @@
 #include <stdlib.h>
 #include "TipoPilha.hpp"
 
-typedef struct {
-    ItemType items[MAXSIZE];
+typedef struct{
+    ItemType *items;
     int top;
-} Pilha;
+}Pilha;
 
 Pilha *CreateStack();
 void DestroyStack(Pilha**);
+int IsEmpty(Pilha*);
+int IsFull(Pilha*);
+int SetSize(Pilha*, int);
+int Size(Pilha*);
+ItemType Top(Pilha*);
+ItemType Pop(Pilha*);
+void Push(Pilha*, ItemType);
