@@ -1,17 +1,18 @@
+// Copyright 2020 Matheus Braga
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include "../include/pilha.hpp"
 
-Pilha *CreateStack(){
-    Pilha *p = (Pilha*)malloc(sizeof(Pilha));
-    
-    if(p == NULL)
+Pilha *CreateStack() {
+    Pilha *p = reinterpret_cast<Pilha*>(malloc(sizeof(Pilha)));
+
+    if (p == NULL)
         return NULL;
 
-    p->items = (ItemType*)malloc(sizeof(ItemType)*SIZE);
+    p->items = reinterpret_cast<ItemType*>(malloc(sizeof(ItemType)*SIZE));
 
-    if(p->items == NULL)
+    if (p->items == NULL)
         return NULL;
 
     p->top = 0;
@@ -19,7 +20,7 @@ Pilha *CreateStack(){
     return p;
 }
 
-void DestroyStack(Pilha **p){
+void DestroyStack(Pilha **p) {
     Pilha *aux;
     aux = *p;
     free(aux->items);
@@ -28,36 +29,36 @@ void DestroyStack(Pilha **p){
     *p = NULL;
 }
 
-int IsEmpty(Pilha *p){
-    if((p->top) == 0)
+int IsEmpty(Pilha *p) {
+    if ((p->top) == 0)
         return TRUE;
     else
-        return FALSE;  
+        return FALSE;
 }
 
-int IsFull(Pilha *p){
-    if((p->top) >= SIZE)
+int IsFull(Pilha *p) {
+    if ((p->top) >= SIZE)
         return TRUE;
     else
-        return FALSE;    
+        return FALSE;
 }
 
-int SetSize(Pilha *p, int new_size){
-    //assumi que para a implementação com vetor a pilha tem tamanho fixo
-    //logo não se pode mudar o tamanho dela despois que já foi criada
+int SetSize(Pilha *p, int new_size) {
+    // assumi que para a implementação com vetor a pilha tem tamanho fixo
+    // logo não se pode mudar o tamanho dela despois que já foi criada
     return FALSE;
 }
 
-int Size(Pilha *p){
+int Size(Pilha *p) {
     return p->top;
 }
 
-ItemType Top(Pilha *p){
+ItemType Top(Pilha *p) {
     return p->items[(p->top)-1];
 }
 
-ItemType Pop(Pilha *p){
-    if(IsEmpty(p)){
+ItemType Pop(Pilha *p) {
+    if (IsEmpty(p)) {
         perror("Erro! Pilha vazia!");
         exit(1);
     }
@@ -67,12 +68,11 @@ ItemType Pop(Pilha *p){
     return ret;
 }
 
-void Push(Pilha *p, ItemType elem){
-    if(!IsFull(p)){
+void Push(Pilha *p, ItemType elem) {
+    if (!IsFull(p)) {
         p->items[p->top] = elem;
         p->top++;
-    }
-    else{
+    } else {
         perror("Erro! Pilha cheia!");
         exit(1);
     }
