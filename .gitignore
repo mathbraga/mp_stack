@@ -1,2 +1,3 @@
-runTests
+src/testar
+src/obj/*.o
 .vscode
