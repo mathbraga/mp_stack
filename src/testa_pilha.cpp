@@ -1,6 +1,7 @@
 // Copyright 2020 Matheus Braga
 #define CATCH_CONFIG_MAIN
 #include "../include/catch.hpp"
+#include "../include/TipoPilha.hpp"
 #include "../include/pilha.hpp"
 
 Pilha *stack;

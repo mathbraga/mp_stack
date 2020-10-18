@@ -1,7 +1,7 @@
 // Copyright 2020 Matheus Braga
-#include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "../include/TipoPilha.hpp"
 #include "../include/pilha.hpp"
 
 Pilha *CreateStack() {
@@ -11,10 +11,6 @@ Pilha *CreateStack() {
         return NULL;
 
     p->items = reinterpret_cast<ItemType*>(malloc(sizeof(ItemType)*SIZE));
-
-    if (p->items == NULL)
-        return NULL;
-
     p->top = 0;
 
     return p;
