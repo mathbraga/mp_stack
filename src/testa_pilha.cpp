@@ -4,11 +4,8 @@
 
 Pilha *stack;
 
-TEST_CASE( "Criando pilha", "[stack]" ) {
+TEST_CASE( "Criando e destruindo pilha", "[stack]" ) {
     REQUIRE((stack = CreateStack()) != NULL);
-}
-
-TEST_CASE( "Destruindo pilha", "[stack]" ) {
     DestroyStack(&stack);
     REQUIRE(stack == NULL);
 }
