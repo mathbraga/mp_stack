@@ -1,3 +1,6 @@
+#ifndef PILHA_INCLUDE_PILHA_H_
+#define PILHA_INCLUDE_PILHA_H_
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "TipoPilha.hpp"
@@ -16,3 +19,5 @@ int Size(Pilha*);
 ItemType Top(Pilha*);
 ItemType Pop(Pilha*);
 void Push(Pilha*, ItemType);
+
+#endif  // PILHA_INCLUDE_PILHA_H_
