@@ -42,9 +42,12 @@ SCENARIO("Verificando funcoes IsEmpty, IsFull, Size e SetSize") {
             Push(stack, ++elemento);
             Push(stack, ++elemento);
             Push(stack, ++elemento);
-            // esse teste falha intencionalmente para pilha dinâmica
-            // deixá-lo como comentário é uma opção
+
+            // Este teste é apenas para pilha com Vetor
+            #if !Pilha_Dinamica
             CHECK(IsFull(stack) == TRUE);
+            #endif
+
             REQUIRE(Size(stack) == 5);
             THEN("Aumentamos o tamanho da pilha") {
                 REQUIRE(Top(stack) == elemento);
@@ -59,9 +62,11 @@ SCENARIO("Verificando funcoes IsEmpty, IsFull, Size e SetSize") {
                 // Inserimos mais um elemento na pilha
                 Push(stack, aux+1);
 
-                // esse teste falha intencionalmente para pilha dinâmica
-                // deixá-lo como comentário é uma opção
+                // Este teste é apenas para pilha com Vetor
+                #if !Pilha_Dinamica
                 CHECK(IsFull(stack) == TRUE);   // Agora a pilha está cheia
+                #endif
+
                 REQUIRE(Top(stack) == aux+1);
                 // Retiramos um elemento da pilha
                 REQUIRE(Pop(stack) == aux+1);
