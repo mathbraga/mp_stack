@@ -1,0 +1,4 @@
+gcov -o obj/ pilhaVetor.cpp
+File 'pilhaVetor.cpp'
+Lines executed:86.27% of 51
+Creating 'pilhaVetor.cpp.gcov'

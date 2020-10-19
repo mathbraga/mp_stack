@@ -4,27 +4,29 @@
 #include "../include/TipoPilha.hpp"
 #include "../include/pilha.hpp"
 
+// Cria pilha
 Pilha *CreateStack() {
     Pilha *p = reinterpret_cast<Pilha*>(malloc(sizeof(Pilha)));
 
-    if (p == NULL)
-        return NULL;
+    if (p == nullptr) {
+        perror("Erro na alocação de memoria!");
+        return nullptr;
+    }
 
-    p->items = reinterpret_cast<ItemType*>(malloc(sizeof(ItemType)*SIZE));
+    p->items = nullptr;
+    p->tamanho = 0;
     p->top = 0;
 
     return p;
 }
 
+// Destroi pilha
 void DestroyStack(Pilha **p) {
-    Pilha *aux;
-    aux = *p;
-    free(aux->items);
-    aux->items = NULL;
     free(*p);
-    *p = NULL;
+    *p = nullptr;
 }
 
+// Verifica se pilha está vazia
 int IsEmpty(Pilha *p) {
     if ((p->top) == 0)
         return TRUE;
@@ -32,27 +34,43 @@ int IsEmpty(Pilha *p) {
         return FALSE;
 }
 
+// Verifica se pilha está cheia
 int IsFull(Pilha *p) {
-    if ((p->top) >= SIZE)
+    if (IsEmpty(p))
+        return FALSE;
+    else if ((p->top) >= Size(p))
         return TRUE;
     else
         return FALSE;
 }
 
+// Emprega um tamanho para pilha com vetor
 int SetSize(Pilha *p, int new_size) {
-    // assumi que para a implementação com vetor a pilha tem tamanho fixo
-    // logo não se pode mudar o tamanho dela despois que já foi criada
-    return FALSE;
+    p->tamanho = new_size;
+    if (p->items == nullptr) {
+        p->items = reinterpret_cast<ItemType*>\
+        (malloc(sizeof(ItemType)*p->tamanho));
+    } else {
+        p->items = reinterpret_cast<ItemType*>\
+        (realloc(p->items, sizeof(ItemType)*p->tamanho));
+    }
+    if (p->items != nullptr)
+        return TRUE;
+    else
+        return FALSE;
 }
 
+// Retorna o tamanho da pilha
 int Size(Pilha *p) {
-    return p->top;
+    return p->tamanho;
 }
 
+// Retorna o elemento do topo da pilha
 ItemType Top(Pilha *p) {
     return p->items[(p->top)-1];
 }
 
+// Retira o elemento do topo da pilha
 ItemType Pop(Pilha *p) {
     if (IsEmpty(p)) {
         perror("Erro! Pilha vazia!");
@@ -64,6 +82,7 @@ ItemType Pop(Pilha *p) {
     return ret;
 }
 
+// Insere um elemento no topo da pilha
 void Push(Pilha *p, ItemType elem) {
     if (!IsFull(p)) {
         p->items[p->top] = elem;

@@ -1,0 +1,97 @@
+        -:    0:Source:pilhaDinamica.cpp
+        -:    0:Graph:obj/pilhaDinamica.gcno
+        -:    0:Data:obj/pilhaDinamica.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:// Copyright 2020 Matheus Braga
+        -:    2:#include <stdio.h>
+        -:    3:#include <stdlib.h>
+        -:    4:#include "../include/TipoPilha.hpp"
+        -:    5:#include "../include/pilha.hpp"
+        -:    6:
+        -:    7:// Cria pilha
+        6:    8:Pilha *CreateStack() {
+        6:    9:    Pilha *p = reinterpret_cast<Pilha*>(malloc(sizeof(Pilha)));
+        6:   10:    if (p == nullptr) {
+    #####:   11:        perror("Erro na alocação de memoria!");
+    #####:   12:        return nullptr;
+        -:   13:    }
+        -:   14:
+        6:   15:    p->top = NULL;
+        -:   16:
+        6:   17:    return p;
+        -:   18:}
+        -:   19:
+        -:   20:// Destroi pilha
+       20:   21:void DestroyStack(Pilha **p) {
+       34:   22:    while (Size(*p) != 0)
+       14:   23:        Pop(*p);
+        -:   24:
+        6:   25:    free(*p);
+        6:   26:    *p = nullptr;
+        6:   27:}
+        -:   28:
+        -:   29:// Verifica se pilha está vazia
+       21:   30:int IsEmpty(Pilha *p) {
+       21:   31:    if ((p->top) == NULL)
+        4:   32:        return TRUE;
+        -:   33:    else
+       17:   34:        return FALSE;
+        -:   35:}
+        -:   36:
+        -:   37:// Verifica se pilha está cheia
+        7:   38:int IsFull(Pilha *p) {
+        -:   39:    // assumi que para implementação com pilha dinâmica,
+        -:   40:    // a pilha nunca estará cheia, a não ser que houve algum
+        -:   41:    // problema na alocação de memória, problema não relacionado
+        -:   42:    // com esta função
+        7:   43:    return FALSE;
+        -:   44:}
+        -:   45:
+        -:   46:// Emprega um tamanho para pilha com vetor
+        6:   47:int SetSize(Pilha *p, int new_size) {
+        -:   48:    // assumi que para a implementação dinâmica, esta função é desnecessária
+        -:   49:    // pois a ideia de se ter uma pilha dinâmica é que ela expande a medida
+        -:   50:    // que mais elementos são inseridos nela
+        6:   51:    return TRUE;
+        -:   52:}
+        -:   53:
+        -:   54:// Retorna o tamanho da pilha
+       25:   55:int Size(Pilha *p) {
+       25:   56:    Item *aux = p->top;
+       25:   57:    int tam = 0;
+      125:   58:    while (aux != NULL) {
+       50:   59:        tam++;
+       50:   60:        aux = aux->next;
+        -:   61:    }
+       25:   62:    return tam;
+        -:   63:}
+        -:   64:
+        -:   65:// Retorna o elemento do topo da pilha
+        8:   66:ItemType Top(Pilha *p) {
+        8:   67:    return p->top->elemento;
+        -:   68:}
+        -:   69:
+        -:   70:// Retira o elemento do topo da pilha
+       16:   71:ItemType Pop(Pilha *p) {
+       16:   72:    if (IsEmpty(p)) {
+    #####:   73:        perror("Erro! Pilha vazia!");
+    #####:   74:        exit(1);
+        -:   75:    }
+        -:   76:    ItemType ret;
+        -:   77:    Item *aux;
+       16:   78:    ret = p->top->elemento;
+       16:   79:    aux = p->top;
+       16:   80:    p->top = aux->next;
+       16:   81:    free(aux);
+        -:   82:
+       16:   83:    return ret;
+        -:   84:}
+        -:   85:
+        -:   86:// Insere um elemento no topo da pilha
+       16:   87:void Push(Pilha *p, ItemType elem) {
+       16:   88:    Item *novo = reinterpret_cast<Item*>(malloc(sizeof(Item)));
+       16:   89:    novo->elemento = elem;
+       16:   90:    novo->next = p->top;
+       16:   91:    p->top = novo;
+       16:   92:}

@@ -1,6 +1,6 @@
 IDIR =../include
 CC=g++
-CFLAGS=-I$(IDIR)
+CFLAGS=-I$(IDIR) -ftest-coverage -fprofile-arcs
 
 ODIR=obj
 LDIR =../lib
@@ -10,7 +10,7 @@ LIBS=-lm
 _DEPS = pilha.hpp TipoPilha.hpp
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = testa_pilha.o pilha.o
+_OBJ = testa_pilha.o pilhaDinamica.o # pilhaVetor.o ou pilhaDinamica.o, depende da implementação escolhida
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 
@@ -23,7 +23,7 @@ testar: $(OBJ)
 .PHONY: clean
 
 clean:
-	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ 
+	rm -f $(ODIR)/*.o $(ODIR)/*.gcda $(ODIR)/*.gcno *~ core $(INCDIR)/*~ 
 
 cleanTest:
 	rm testar

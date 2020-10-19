@@ -1,3 +1,7 @@
 src/testar
 src/obj/*.o
+src/obj/*.gcno
+src/obj/*.gcda
+src/*.gcov
+README.pdf
 .vscode

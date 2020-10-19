@@ -1,0 +1,90 @@
+        -:    0:Source:pilhaVetor.cpp
+        -:    0:Graph:obj/pilhaVetor.gcno
+        -:    0:Data:obj/pilhaVetor.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:// Copyright 2020 Matheus Braga
+        -:    2:#include <stdio.h>
+        -:    3:#include <stdlib.h>
+        -:    4:#include "../include/TipoPilha.hpp"
+        -:    5:#include "../include/pilha.hpp"
+        -:    6:
+        6:    7:Pilha *CreateStack() {
+        6:    8:    Pilha *p = reinterpret_cast<Pilha*>(malloc(sizeof(Pilha)));
+        -:    9:
+        6:   10:    if (p == nullptr) {
+    #####:   11:        perror("Erro na alocação de memoria!");
+    #####:   12:        return nullptr;
+        -:   13:    }
+        -:   14:
+        6:   15:    p->items = nullptr;
+        6:   16:    p->tamanho = 0;
+        6:   17:    p->top = 0;
+        -:   18:
+        6:   19:    return p;
+        -:   20:}
+        -:   21:
+        6:   22:void DestroyStack(Pilha **p) {
+        6:   23:    free(*p);
+        6:   24:    *p = nullptr;
+        6:   25:}
+        -:   26:
+       25:   27:int IsEmpty(Pilha *p) {
+       25:   28:    if ((p->top) == 0)
+       10:   29:        return TRUE;
+        -:   30:    else
+       15:   31:        return FALSE;
+        -:   32:}
+        -:   33:
+       18:   34:int IsFull(Pilha *p) {
+       18:   35:    if (IsEmpty(p))
+        6:   36:        return FALSE;
+       12:   37:    else if ((p->top) >= Size(p))
+        2:   38:        return TRUE;
+        -:   39:    else
+       10:   40:        return FALSE;
+        -:   41:}
+        -:   42:
+        6:   43:int SetSize(Pilha *p, int new_size) {
+        6:   44:    p->tamanho = new_size;
+        6:   45:    if (p->items == nullptr) {
+        5:   46:        p->items = reinterpret_cast<ItemType*>\
+        5:   47:        (malloc(sizeof(ItemType)*p->tamanho));
+        -:   48:    } else {
+        1:   49:        p->items = reinterpret_cast<ItemType*>\
+        1:   50:        (realloc(p->items, sizeof(ItemType)*p->tamanho));
+        -:   51:    }
+        6:   52:    if (p->items != nullptr)
+        6:   53:        return TRUE;
+        -:   54:    else
+    #####:   55:        return FALSE;
+        -:   56:}
+        -:   57:
+       17:   58:int Size(Pilha *p) {
+       17:   59:    return p->tamanho;
+        -:   60:}
+        -:   61:
+        8:   62:ItemType Top(Pilha *p) {
+        8:   63:    return p->items[(p->top)-1];
+        -:   64:}
+        -:   65:
+        2:   66:ItemType Pop(Pilha *p) {
+        2:   67:    if (IsEmpty(p)) {
+    #####:   68:        perror("Erro! Pilha vazia!");
+    #####:   69:        exit(1);
+        -:   70:    }
+        -:   71:    ItemType ret;
+        2:   72:    ret = p->items[(p->top)-1];
+        2:   73:    p->top--;
+        2:   74:    return ret;
+        -:   75:}
+        -:   76:
+       11:   77:void Push(Pilha *p, ItemType elem) {
+       11:   78:    if (!IsFull(p)) {
+       11:   79:        p->items[p->top] = elem;
+       11:   80:        p->top++;
+        -:   81:    } else {
+    #####:   82:        perror("Erro! Pilha cheia!");
+    #####:   83:        exit(1);
+        -:   84:    }
+       11:   85:}

@@ -1,0 +1,84 @@
+\hypertarget{pilha_dinamica_8cpp}{}\doxysection{src/pilha\+Dinamica.cpp File Reference}
+\label{pilha_dinamica_8cpp}\index{src/pilhaDinamica.cpp@{src/pilhaDinamica.cpp}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../include/\+Tipo\+Pilha.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/pilha.\+hpp\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Pilha $\ast$ \mbox{\hyperlink{pilha_dinamica_8cpp_aac5fce5ee3c88dbdff410dd977d49400}{Create\+Stack}} ()
+\item 
+void \mbox{\hyperlink{pilha_dinamica_8cpp_a810a4c80b36975c38fff84c6fc45eee8}{Destroy\+Stack}} (Pilha $\ast$$\ast$p)
+\item 
+int \mbox{\hyperlink{pilha_dinamica_8cpp_a0ad85ca56c09bf8be802ad56e7863421}{Is\+Empty}} (Pilha $\ast$p)
+\item 
+int \mbox{\hyperlink{pilha_dinamica_8cpp_aca7535eacc8ed6708d2dc747b13a7ad8}{Is\+Full}} (Pilha $\ast$p)
+\item 
+int \mbox{\hyperlink{pilha_dinamica_8cpp_a9745eac291e7b6f770a7c3edcf80903c}{Set\+Size}} (Pilha $\ast$p, int new\+\_\+size)
+\item 
+int \mbox{\hyperlink{pilha_dinamica_8cpp_a0baefa77a1c3a2232b0231e681dd2e33}{Size}} (Pilha $\ast$p)
+\item 
+Item\+Type \mbox{\hyperlink{pilha_dinamica_8cpp_a482f1a276161ec8e67446e30083ab022}{Top}} (Pilha $\ast$p)
+\item 
+Item\+Type \mbox{\hyperlink{pilha_dinamica_8cpp_ae6f9d3d4d97d06279a6d28db18227dda}{Pop}} (Pilha $\ast$p)
+\item 
+void \mbox{\hyperlink{pilha_dinamica_8cpp_a1c085df921c22752cbf956ab7bfbb3c5}{Push}} (Pilha $\ast$p, Item\+Type elem)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pilha_dinamica_8cpp_aac5fce5ee3c88dbdff410dd977d49400}\label{pilha_dinamica_8cpp_aac5fce5ee3c88dbdff410dd977d49400}} 
+\index{pilhaDinamica.cpp@{pilhaDinamica.cpp}!CreateStack@{CreateStack}}
+\index{CreateStack@{CreateStack}!pilhaDinamica.cpp@{pilhaDinamica.cpp}}
+\doxysubsubsection{\texorpdfstring{CreateStack()}{CreateStack()}}
+{\footnotesize\ttfamily Pilha$\ast$ Create\+Stack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pilha_dinamica_8cpp_a810a4c80b36975c38fff84c6fc45eee8}\label{pilha_dinamica_8cpp_a810a4c80b36975c38fff84c6fc45eee8}} 
+\index{pilhaDinamica.cpp@{pilhaDinamica.cpp}!DestroyStack@{DestroyStack}}
+\index{DestroyStack@{DestroyStack}!pilhaDinamica.cpp@{pilhaDinamica.cpp}}
+\doxysubsubsection{\texorpdfstring{DestroyStack()}{DestroyStack()}}
+{\footnotesize\ttfamily void Destroy\+Stack (\begin{DoxyParamCaption}\item[{Pilha $\ast$$\ast$}]{p }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pilha_dinamica_8cpp_a0ad85ca56c09bf8be802ad56e7863421}\label{pilha_dinamica_8cpp_a0ad85ca56c09bf8be802ad56e7863421}} 
+\index{pilhaDinamica.cpp@{pilhaDinamica.cpp}!IsEmpty@{IsEmpty}}
+\index{IsEmpty@{IsEmpty}!pilhaDinamica.cpp@{pilhaDinamica.cpp}}
+\doxysubsubsection{\texorpdfstring{IsEmpty()}{IsEmpty()}}
+{\footnotesize\ttfamily int Is\+Empty (\begin{DoxyParamCaption}\item[{Pilha $\ast$}]{p }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pilha_dinamica_8cpp_aca7535eacc8ed6708d2dc747b13a7ad8}\label{pilha_dinamica_8cpp_aca7535eacc8ed6708d2dc747b13a7ad8}} 
+\index{pilhaDinamica.cpp@{pilhaDinamica.cpp}!IsFull@{IsFull}}
+\index{IsFull@{IsFull}!pilhaDinamica.cpp@{pilhaDinamica.cpp}}
+\doxysubsubsection{\texorpdfstring{IsFull()}{IsFull()}}
+{\footnotesize\ttfamily int Is\+Full (\begin{DoxyParamCaption}\item[{Pilha $\ast$}]{p }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pilha_dinamica_8cpp_ae6f9d3d4d97d06279a6d28db18227dda}\label{pilha_dinamica_8cpp_ae6f9d3d4d97d06279a6d28db18227dda}} 
+\index{pilhaDinamica.cpp@{pilhaDinamica.cpp}!Pop@{Pop}}
+\index{Pop@{Pop}!pilhaDinamica.cpp@{pilhaDinamica.cpp}}
+\doxysubsubsection{\texorpdfstring{Pop()}{Pop()}}
+{\footnotesize\ttfamily Item\+Type Pop (\begin{DoxyParamCaption}\item[{Pilha $\ast$}]{p }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pilha_dinamica_8cpp_a1c085df921c22752cbf956ab7bfbb3c5}\label{pilha_dinamica_8cpp_a1c085df921c22752cbf956ab7bfbb3c5}} 
+\index{pilhaDinamica.cpp@{pilhaDinamica.cpp}!Push@{Push}}
+\index{Push@{Push}!pilhaDinamica.cpp@{pilhaDinamica.cpp}}
+\doxysubsubsection{\texorpdfstring{Push()}{Push()}}
+{\footnotesize\ttfamily void Push (\begin{DoxyParamCaption}\item[{Pilha $\ast$}]{p,  }\item[{Item\+Type}]{elem }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pilha_dinamica_8cpp_a9745eac291e7b6f770a7c3edcf80903c}\label{pilha_dinamica_8cpp_a9745eac291e7b6f770a7c3edcf80903c}} 
+\index{pilhaDinamica.cpp@{pilhaDinamica.cpp}!SetSize@{SetSize}}
+\index{SetSize@{SetSize}!pilhaDinamica.cpp@{pilhaDinamica.cpp}}
+\doxysubsubsection{\texorpdfstring{SetSize()}{SetSize()}}
+{\footnotesize\ttfamily int Set\+Size (\begin{DoxyParamCaption}\item[{Pilha $\ast$}]{p,  }\item[{int}]{new\+\_\+size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pilha_dinamica_8cpp_a0baefa77a1c3a2232b0231e681dd2e33}\label{pilha_dinamica_8cpp_a0baefa77a1c3a2232b0231e681dd2e33}} 
+\index{pilhaDinamica.cpp@{pilhaDinamica.cpp}!Size@{Size}}
+\index{Size@{Size}!pilhaDinamica.cpp@{pilhaDinamica.cpp}}
+\doxysubsubsection{\texorpdfstring{Size()}{Size()}}
+{\footnotesize\ttfamily int Size (\begin{DoxyParamCaption}\item[{Pilha $\ast$}]{p }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pilha_dinamica_8cpp_a482f1a276161ec8e67446e30083ab022}\label{pilha_dinamica_8cpp_a482f1a276161ec8e67446e30083ab022}} 
+\index{pilhaDinamica.cpp@{pilhaDinamica.cpp}!Top@{Top}}
+\index{Top@{Top}!pilhaDinamica.cpp@{pilhaDinamica.cpp}}
+\doxysubsubsection{\texorpdfstring{Top()}{Top()}}
+{\footnotesize\ttfamily Item\+Type Top (\begin{DoxyParamCaption}\item[{Pilha $\ast$}]{p }\end{DoxyParamCaption})}
+

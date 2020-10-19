@@ -5,19 +5,14 @@
 #include <stdlib.h>
 #include "TipoPilha.hpp"
 
-typedef struct{
-    ItemType *items;
-    int top;
-}Pilha;
-
-Pilha *CreateStack();
-void DestroyStack(Pilha**);
-int IsEmpty(Pilha*);
-int IsFull(Pilha*);
-int SetSize(Pilha*, int);
-int Size(Pilha*);
-ItemType Top(Pilha*);
-ItemType Pop(Pilha*);
-void Push(Pilha*, ItemType);
+Pilha *CreateStack();        // Cria pilha
+void DestroyStack(Pilha**);  // Destroi pilha
+int IsEmpty(Pilha*);         // Verifica se pilha está vazia
+int IsFull(Pilha*);          // Verifica se pilha está cheia
+int SetSize(Pilha*, int);    // Emprega um tamanho para pilha com vetor
+int Size(Pilha*);            // Retorna o tamanho da pilha
+ItemType Top(Pilha*);        // Retorna o elemento do topo da pilha
+ItemType Pop(Pilha*);        // Retira o elemento do topo da pilha
+void Push(Pilha*, ItemType); // Insere um elemento no topo da pilha
 
 #endif  // PILHA_INCLUDE_PILHA_H_

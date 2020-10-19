@@ -1,0 +1,4 @@
+gcov -o obj/ pilhaDinamica.cpp
+File 'pilhaDinamica.cpp'
+Lines executed:91.11% of 45
+Creating 'pilhaDinamica.cpp.gcov'
