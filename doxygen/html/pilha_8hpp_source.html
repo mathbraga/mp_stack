@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Trabalho de MP 1: include/pilha.hpp Source File</title>
+<title>Projeto 1 de MP - Pilhas: include/pilha.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,9 +21,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Trabalho de MP 1
+   <div id="projectname">Projeto 1 de MP - Pilhas
    </div>
-   <div id="projectbrief">O trabalho consiste na implementação de um estrutura de dados do tipo pilha. Sendo uma versão do tipo Vetor de ItemType e a outra do tipo Lista de nós de ItemType.</div>
+   <div id="projectbrief">O projeto consiste na implementação de um estrutura de dados do tipo pilha. Sendo uma versão do tipo Vetor de ItemType e a outra do tipo Lista de nós de ItemType.</div>
   </td>
  </tr>
  </tbody>
@@ -77,19 +77,27 @@ $(function() {
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;TipoPilha.hpp&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<a class="code" href="struct_pilha.html">Pilha</a> *CreateStack();        <span class="comment">// Cria pilha</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keywordtype">void</span> DestroyStack(<a class="code" href="struct_pilha.html">Pilha</a>**);  <span class="comment">// Destroi pilha</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keywordtype">int</span> IsEmpty(<a class="code" href="struct_pilha.html">Pilha</a>*);         <span class="comment">// Verifica se pilha está vazia</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keywordtype">int</span> IsFull(<a class="code" href="struct_pilha.html">Pilha</a>*);          <span class="comment">// Verifica se pilha está cheia</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keywordtype">int</span> SetSize(<a class="code" href="struct_pilha.html">Pilha</a>*, <span class="keywordtype">int</span>);    <span class="comment">// Emprega um tamanho para pilha com vetor</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keywordtype">int</span> Size(<a class="code" href="struct_pilha.html">Pilha</a>*);            <span class="comment">// Retorna o tamanho da pilha</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;ItemType Top(<a class="code" href="struct_pilha.html">Pilha</a>*);        <span class="comment">// Retorna o elemento do topo da pilha</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;ItemType Pop(<a class="code" href="struct_pilha.html">Pilha</a>*);        <span class="comment">// Retira o elemento do topo da pilha</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keywordtype">void</span> Push(<a class="code" href="struct_pilha.html">Pilha</a>*, ItemType); <span class="comment">// Insere um elemento no topo da pilha</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#endif  // PILHA_INCLUDE_PILHA_H_</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Cria pilha</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;Pilha *CreateStack();</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// Destroi pilha</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keywordtype">void</span> DestroyStack(Pilha**);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// Verifica se pilha está vazia</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keywordtype">int</span> IsEmpty(Pilha*);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// Verifica se pilha está cheia</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">int</span> IsFull(Pilha*);     </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// Emprega um tamanho para pilha com vetor     </span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keywordtype">int</span> SetSize(Pilha*, <span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// Retorna o tamanho da pilha </span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordtype">int</span> Size(Pilha*);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// Retorna o elemento do topo da pilha        </span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;ItemType Top(Pilha*);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// Retira o elemento do topo da pilha </span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;ItemType Pop(Pilha*);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// Insere um elemento no topo da pilha</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">void</span> Push(Pilha*, ItemType);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif  // PILHA_INCLUDE_PILHA_H_</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="astruct_pilha_html"><div class="ttname"><a href="struct_pilha.html">Pilha</a></div><div class="ttdef"><b>Definition:</b> TipoPilha.hpp:31</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

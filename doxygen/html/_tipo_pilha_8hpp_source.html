@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Trabalho de MP 1: include/TipoPilha.hpp Source File</title>
+<title>Projeto 1 de MP - Pilhas: include/TipoPilha.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,9 +21,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Trabalho de MP 1
+   <div id="projectname">Projeto 1 de MP - Pilhas
    </div>
-   <div id="projectbrief">O trabalho consiste na implementação de um estrutura de dados do tipo pilha. Sendo uma versão do tipo Vetor de ItemType e a outra do tipo Lista de nós de ItemType.</div>
+   <div id="projectbrief">O projeto consiste na implementação de um estrutura de dados do tipo pilha. Sendo uma versão do tipo Vetor de ItemType e a outra do tipo Lista de nós de ItemType.</div>
   </td>
  </tr>
  </tbody>
@@ -84,39 +84,42 @@ $(function() {
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef PILHA_INCLUDE_TIPOPILHA_H_</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define PILHA_INCLUDE_TIPOPILHA_H_</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">int</span> ItemType; <span class="comment">//definir tipo do ItemType</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">int</span> ItemType; <span class="comment">// Definir tipo do ItemType</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// Pilha com vetor</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// typedef struct{</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//     ItemType *items;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//     int tamanho;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//     int top;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// }Pilha;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// fim</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// Pilha dinâmica</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="struct_item_info.html">   26</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_item_info.html">ItemInfo</a>{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    ItemType elemento;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="struct_item_info.html">ItemInfo</a> *next;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}<a class="code" href="struct_item_info.html">Item</a>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="struct_pilha.html">   31</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span>{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="struct_item_info.html">Item</a> *top;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}<a class="code" href="struct_pilha.html">Pilha</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// fim</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#ifndef TRUE</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#define TRUE (1 == 1)</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#ifndef FALSE</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define FALSE (0 == 1)</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif  // PILHA_INCLUDE_TIPOPILHA_H_</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="struct_pilha___vetor.html">   20</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span>{</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="struct_pilha___vetor.html#a36da71fd12d7dda0b8f527671ee29653">   22</a></span>&#160;    ItemType *<a class="code" href="struct_pilha___vetor.html#a36da71fd12d7dda0b8f527671ee29653">items</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="struct_pilha___vetor.html#a4e11ce9d357db48ab7f888fe3089f6c8">   24</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_pilha___vetor.html#a4e11ce9d357db48ab7f888fe3089f6c8">tamanho</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="struct_pilha___vetor.html#aadd86a829cabf2965680b17f692249ce">   26</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_pilha___vetor.html#aadd86a829cabf2965680b17f692249ce">top</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}<a class="code" href="struct_pilha___vetor.html">Pilha_Vetor</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="struct_item_info.html">   32</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_item_info.html">ItemInfo</a>{</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="struct_item_info.html#a19cd7d49107ad721f4f7e905e69ad978">   34</a></span>&#160;    ItemType <a class="code" href="struct_item_info.html#a19cd7d49107ad721f4f7e905e69ad978">elemento</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="struct_item_info.html#a5f4e7e712d2a4c8f5322dca7f479e7cc">   36</a></span>&#160;    <a class="code" href="struct_item_info.html">ItemInfo</a> *<a class="code" href="struct_item_info.html#a5f4e7e712d2a4c8f5322dca7f479e7cc">next</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}<a class="code" href="struct_item_info.html">Item</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="struct_pilha___dinamica.html">   42</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span>{</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="struct_pilha___dinamica.html#a9f5d87546e23367087f5f31f88623c58">   44</a></span>&#160;    <a class="code" href="struct_item_info.html">Item</a> *<a class="code" href="struct_pilha___dinamica.html#a9f5d87546e23367087f5f31f88623c58">top</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}<a class="code" href="struct_pilha___dinamica.html">Pilha_Dinamica</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#ifndef TRUE</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#define TRUE (1 == 1)</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#ifndef FALSE</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#define FALSE (0 == 1)</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif  // PILHA_INCLUDE_TIPOPILHA_H_</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="astruct_pilha_html"><div class="ttname"><a href="struct_pilha.html">Pilha</a></div><div class="ttdef"><b>Definition:</b> TipoPilha.hpp:31</div></div>
-<div class="ttc" id="astruct_item_info_html"><div class="ttname"><a href="struct_item_info.html">ItemInfo</a></div><div class="ttdef"><b>Definition:</b> TipoPilha.hpp:26</div></div>
+<div class="ttc" id="astruct_pilha___dinamica_html_a9f5d87546e23367087f5f31f88623c58"><div class="ttname"><a href="struct_pilha___dinamica.html#a9f5d87546e23367087f5f31f88623c58">Pilha_Dinamica::top</a></div><div class="ttdeci">Item * top</div><div class="ttdoc">Ponteiro para o topo da pilha.</div><div class="ttdef"><b>Definition:</b> TipoPilha.hpp:44</div></div>
+<div class="ttc" id="astruct_pilha___vetor_html_a4e11ce9d357db48ab7f888fe3089f6c8"><div class="ttname"><a href="struct_pilha___vetor.html#a4e11ce9d357db48ab7f888fe3089f6c8">Pilha_Vetor::tamanho</a></div><div class="ttdeci">int tamanho</div><div class="ttdoc">Tamanho da pilha.</div><div class="ttdef"><b>Definition:</b> TipoPilha.hpp:24</div></div>
+<div class="ttc" id="astruct_item_info_html_a19cd7d49107ad721f4f7e905e69ad978"><div class="ttname"><a href="struct_item_info.html#a19cd7d49107ad721f4f7e905e69ad978">ItemInfo::elemento</a></div><div class="ttdeci">ItemType elemento</div><div class="ttdoc">Elemento do tipo genérico ItemType.</div><div class="ttdef"><b>Definition:</b> TipoPilha.hpp:34</div></div>
+<div class="ttc" id="astruct_pilha___vetor_html"><div class="ttname"><a href="struct_pilha___vetor.html">Pilha_Vetor</a></div><div class="ttdef"><b>Definition:</b> TipoPilha.hpp:20</div></div>
+<div class="ttc" id="astruct_item_info_html_a5f4e7e712d2a4c8f5322dca7f479e7cc"><div class="ttname"><a href="struct_item_info.html#a5f4e7e712d2a4c8f5322dca7f479e7cc">ItemInfo::next</a></div><div class="ttdeci">ItemInfo * next</div><div class="ttdoc">Ponteiro para o próximo nodo.</div><div class="ttdef"><b>Definition:</b> TipoPilha.hpp:36</div></div>
+<div class="ttc" id="astruct_pilha___vetor_html_a36da71fd12d7dda0b8f527671ee29653"><div class="ttname"><a href="struct_pilha___vetor.html#a36da71fd12d7dda0b8f527671ee29653">Pilha_Vetor::items</a></div><div class="ttdeci">ItemType * items</div><div class="ttdoc">Itens do tipo genérico ItemType.</div><div class="ttdef"><b>Definition:</b> TipoPilha.hpp:22</div></div>
+<div class="ttc" id="astruct_item_info_html"><div class="ttname"><a href="struct_item_info.html">ItemInfo</a></div><div class="ttdef"><b>Definition:</b> TipoPilha.hpp:32</div></div>
+<div class="ttc" id="astruct_pilha___vetor_html_aadd86a829cabf2965680b17f692249ce"><div class="ttname"><a href="struct_pilha___vetor.html#aadd86a829cabf2965680b17f692249ce">Pilha_Vetor::top</a></div><div class="ttdeci">int top</div><div class="ttdoc">Índice com o topo da pilha.</div><div class="ttdef"><b>Definition:</b> TipoPilha.hpp:26</div></div>
+<div class="ttc" id="astruct_pilha___dinamica_html"><div class="ttname"><a href="struct_pilha___dinamica.html">Pilha_Dinamica</a></div><div class="ttdef"><b>Definition:</b> TipoPilha.hpp:42</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

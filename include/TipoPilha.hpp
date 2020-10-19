@@ -1,27 +1,35 @@
-/* O tipo genérico ItemType deve ser definido aqui.
+/* 
+   O tipo genérico ItemType deve ser definido aqui.
+   Para trocar o tipo de ItemType, basta trocar o tipo
+   após a instrução typedef. O valor default é inteiro
+   então "typedef int ItemType;".
 
-   O tipo de implementação da pilha ativa é a que não
-   está comentada.
-
-   Para trocar o tipo de pilha basta retirar o comentado
-   do tipo desejado que está demarcado entre os comentários
-   de tipo "Pilha com vetor" ou "Pilha dinâmica" até o comentário
-   "fim" e comentar a definição do outro tipo.
+   O tipo de implementação da pilha é definida pela
+   variável Pilha_Dinamica. Se Pilha_Dinamica=0, o 
+   tipo de pilha será com Vetor, caso contrário, 
+   será com Lista encadeada.
 */
 
 #ifndef PILHA_INCLUDE_TIPOPILHA_H_
 #define PILHA_INCLUDE_TIPOPILHA_H_
 
-typedef int ItemType; //definir tipo do ItemType
+// Definir tipo de pilha
+#define Pilha_Dinamica 0 // 0-Vetor | 1-Lista
+
+typedef int ItemType; // Definir tipo do ItemType
+
+// Bloco de controle condicional para qual tipo de pilha vai ser usada
+#if !Pilha_Dinamica
 
 // Pilha com vetor
-// typedef struct{
-//     ItemType *items;
-//     int tamanho;
-//     int top;
-// }Pilha;
+typedef struct{
+    ItemType *items;
+    int tamanho;
+    int top;
+}Pilha;
 // fim
 
+#else
 // Pilha dinâmica
 typedef struct ItemInfo{
     ItemType elemento;
@@ -32,6 +40,7 @@ typedef struct{
     Item *top;
 }Pilha;
 // fim
+#endif
 
 #ifndef TRUE
 #define TRUE (1 == 1)
